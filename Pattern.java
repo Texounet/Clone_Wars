@@ -44,7 +44,7 @@ public abstract class Pattern {
 
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
-    }
+    } 
 
     public int getIntelligence() {
         return this.intelligence;
