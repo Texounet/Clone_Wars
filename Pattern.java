@@ -46,7 +46,7 @@ public abstract class Pattern {
 
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
-    }
+    } 
 
     public int getIntelligence() {
         return this.intelligence;
@@ -61,7 +61,7 @@ public abstract class Pattern {
     }
 
     public void lvlUp() {
-    }
+            }
     public void physicalAttack() {
 
     }
