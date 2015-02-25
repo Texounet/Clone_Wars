@@ -12,7 +12,7 @@ public class Pattern {
     public void setHp(int hp) {
 		this.hp = hp;
 	}
-	public int getHP(){
+	public int getHp(){
 		return this.hp;
 	}
 	
