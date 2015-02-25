@@ -9,7 +9,9 @@ import java.io.InputStreamReader;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.print("Choose your class : " + "\n" +
+        System.out.println("Insert your Pseudo");
+        String name = ReadPrompt();
+        System.out.println("Choose your class : " + "\n" +
                 "Power : 1 = Jedi, 2 = Sith" + "\n" +
                 "No Power 3 = bountyHunter, 4 = ImperialAgent, 5 = Mercenary, 6 = Jawa" + "\n");
         int Define = 0;
@@ -19,11 +21,10 @@ public class Main {
             Define = 1;
             switch (HeroClass) {
                 case 1:
-                    Jedi hero = new Jedi("name");
+                    Jedi hero = new Jedi(name);
                     System.out.println(hero.name);
                     break;
                 case 2:
-
                     break;
                 case 3:
                     break;
