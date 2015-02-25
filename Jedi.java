@@ -3,8 +3,6 @@
  */
 public class Jedi extends Power {
 
-    public Jedi(String name) {
-        super(name);
-
+    public Jedi() {
     }
 }

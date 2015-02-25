@@ -13,7 +13,9 @@ public abstract class Pattern {
     public void setHp(int hp) {
         this.hp = hp;
     }
-
+    public void setName(String name) {
+        this.name = name;
+    }
     public int getHp() {
         return this.hp;
     }
@@ -59,9 +61,7 @@ public abstract class Pattern {
     }
 
     public void lvlUp() {
-        
     }
-
     public void physicalAttack() {
 
     }
