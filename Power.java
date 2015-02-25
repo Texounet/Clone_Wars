@@ -4,8 +4,7 @@
 public abstract class Power extends Pattern{
     protected int xp;
 
-    public Power(String name) {
-        this.name = name;
+    public Power() {
     }
 
     public void forceAttack(){
