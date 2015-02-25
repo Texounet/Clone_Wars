@@ -58,8 +58,8 @@ public abstract class Pattern {
         return this.lvl;
     }
 
-    public void lvl_up() {
-        
+    public void lvlUp() {
+    	
     }
 
     public void physicalAttack() {
