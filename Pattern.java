@@ -10,6 +10,12 @@ public abstract class Pattern {
     protected int lvl;
     protected String name;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return this.name;
+    }
     public void setHp(int hp) {
         this.hp = hp;
     }
@@ -46,7 +52,7 @@ public abstract class Pattern {
     public int getLvl() {
         return this.lvl;
     }
-    
+
     public void lvlUp(){
 		setHp((int) Math.round((double) (getHp()*1.5)));
 		setDef((int) Math.round((double) (getDef()*1.5)));
