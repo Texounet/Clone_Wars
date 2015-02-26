@@ -8,8 +8,6 @@ import java.util.HashMap;
  */
 public class Main {
 
-    int[] stats = {};
-
     public static void main(String[] args) {
         System.out.println("Insert your Pseudo" + "\n");
         String name = ReadPrompt();
@@ -17,15 +15,28 @@ public class Main {
         String chooseClass = ReadPrompt();
         HashMap<String, Pattern> Heroclasses = new HashMap<String, Pattern>();
         Heroclasses.put("Jedi", new Pattern(100, 200, 100, 200, 200));
-        Heroclasses.put("Sith", new Pattern(100, 200, 100, 200, 200));
-        Heroclasses.put("BountyHunter", new Pattern(100, 200, 100, 200, 200));
-        Heroclasses.put("ImperialAgent", new Pattern(100, 200, 100, 200, 200));
-        Heroclasses.put("Mercenary", new Pattern(100, 200, 100, 200, 200));
-        Heroclasses.put("Jawa", new Pattern(100, 200, 100, 200, 200));
-        Heroclasses.put("Batman", new Pattern(100, 200, 100, 200, 200));
+        Heroclasses.put("Sith", new Pattern(100, 100, 200, 200, 200));
+        Heroclasses.put("BountyHunter", new Pattern(100, 100, 100, 0, 350));
+        Heroclasses.put("ImperialAgent", new Pattern(350, 100, 100, 0, 100));
+        Heroclasses.put("Mercenary", new Pattern(100, 350, 100, 0, 100));
+        Heroclasses.put("Jawa", new Pattern(400, 400, 400, 0, 400));
+        Heroclasses.put("PyjamaBatman", new Pattern(1000, 1000, 1000, 0, 1000));
+
 
         Hero hero = new Hero(Heroclasses.get(chooseClass), name);
 
+        HashMap<String, HeroAttack> HerosSpells = new HashMap<String, HeroAttack>();
+        HerosSpells.put("physical_attack", new HeroAttack.physical_attack());
+        HerosSpells.put("Sith", new HeroAttack.physical_attack());
+        HerosSpells.put("BountyHunter", new HeroAttack.physical_attack());
+        HerosSpells.put("ImperialAgent", new HeroAttack.physical_attack());
+        HerosSpells.put("Mercenary", new HeroAttack.physical_attack());
+        HerosSpells.put("Jawa", new HeroAttack.physical_attack());
+        HerosSpells.put("PyjamaBatman", new HeroAttack.physical_attack());
+
+        System.out.println("Insert your attack" + "\n");
+        String chooseAttack = ReadPrompt();
+        HerosSpells.get(chooseAttack).launch(hero, hero);
     }
 
     public static String ReadPrompt() {
