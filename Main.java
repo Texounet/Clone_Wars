@@ -1,27 +1,31 @@
-import org.omg.CORBA.DefinitionKind;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 
 /**
  * Created by max on 25/02/2015.
  */
 public class Main {
 
+    int[] stats = {};
+
     public static void main(String[] args) {
         System.out.println("Insert your Pseudo" + "\n");
         String name = ReadPrompt();
-        System.out.println("Choose your class : " + "\n" +
-                "With  : 1 = Jedi, 2 = Sith" + "\n" +
-                "Without  3 = bountyHunter, 4 = ImperialAgent, 5 = Mercenary, 6 = Jawa" + "\n");
-        int Define = 1;
-        while (Define != 0) {
-            String read = ReadPrompt();
-            int HeroClass = Integer.parseInt(read);
-        }
+        System.out.println("Insert your class" + "\n");
+        String chooseClass = ReadPrompt();
+        HashMap<String, Pattern> Heroclasses = new HashMap<String, Pattern>();
+        Heroclasses.put("Jedi", new Pattern(100, 200, 100, 200, 200));
+        Heroclasses.put("Sith", new Pattern(100, 200, 100, 200, 200));
+        Heroclasses.put("BountyHunter", new Pattern(100, 200, 100, 200, 200));
+        Heroclasses.put("ImperialAgent", new Pattern(100, 200, 100, 200, 200));
+        Heroclasses.put("Mercenary", new Pattern(100, 200, 100, 200, 200));
+        Heroclasses.put("Jawa", new Pattern(100, 200, 100, 200, 200));
+        Heroclasses.put("Batman", new Pattern(100, 200, 100, 200, 200));
+
+        Hero hero = new Hero(Heroclasses.get(chooseClass), name);
+
     }
 
     public static String ReadPrompt() {

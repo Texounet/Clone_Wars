@@ -1,7 +1,7 @@
 /**
  * Created by max on 25/02/2015.
  */
-public abstract class Pattern {
+public class Pattern {
     protected int hp;
     protected int def;
     protected int power;
@@ -10,15 +10,27 @@ public abstract class Pattern {
     protected int lvl;
     protected String name;
 
+    public Pattern(int hp, int def, int power, int force, int intelligence) {
+        this.hp = hp;
+        this.def = def;
+        this.power = power;
+        this.force = force;
+        this.intelligence = intelligence;
+        this.lvl = 0;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getName() {
         return this.name;
     }
+
     public void setHp(int hp) {
         this.hp = hp;
     }
+
     public int getHp() {
         return this.hp;
     }
@@ -65,6 +77,7 @@ public abstract class Pattern {
 
     public void lvlUp() {
             }
+
     public void physicalAttack() {
 
     }
