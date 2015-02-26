@@ -20,6 +20,6 @@ public class maintTex {
 	        }
 	        Room rd = new Room(Integer.parseInt(name));
 	        //System.out.println(rd.lvl_room);
-		//System.out.println(test);
+	        //System.out.println(test);
 	}
 }
