@@ -8,6 +8,7 @@ public class Pattern {
     protected int force;
     protected int intelligence;
     protected int lvl;
+    protected int xp;
     protected String name;
 
     public Pattern(int hp, int def, int power, int force, int intelligence) {
@@ -16,7 +17,8 @@ public class Pattern {
         this.power = power;
         this.force = force;
         this.intelligence = intelligence;
-        this.lvl = 0;
+        this.lvl = 1;
+        this.xp = 0;
     }
 
     public void setName(String name) {
