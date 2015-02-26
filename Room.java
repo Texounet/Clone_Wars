@@ -3,14 +3,15 @@ import java.util.Random;
 /**
  * Created by tex on 25/02/2015.
  */
-public class Room extends Pattern{
+public class Room{
 	int lvl_room;
 	
 	public Room(int lvl){
 		lvl_room = lvl_room(lvl);
 		int rnd = random();
-		Factory Mob = new Factory(lvl_room, rnd);
-		//System.out.println(Mob.hp);
+		Factory Mob = new Factory();
+		Pattern bot = Mob.build(lvl_room, rnd);
+		System.out.println(bot.hp);
 	}
 	
 	public int lvl_room(int lvl){ //Niveau de la room
