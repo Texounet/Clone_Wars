@@ -10,8 +10,8 @@ public class Room{
 		lvl_room = lvl_room(lvl);
 		int rnd = random();
 		Factory Mob = new Factory();
-		Pattern bot = Mob.build(lvl_room, rnd);
-		System.out.println(bot.hp);
+		Ennemis bot = Mob.build(lvl_room, rnd);
+		System.out.println(bot.pattern.getHp());
 	}
 	
 	public int lvl_room(int lvl){ //Niveau de la room
