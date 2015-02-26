@@ -10,11 +10,14 @@ public abstract class Pattern {
     protected int lvl;
     protected String name;
 
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
     public void setName(String name) {
         this.name = name;
+    }
+    public String getName() {
+        return this.name;
+    }
+    public void setHp(int hp) {
+        this.hp = hp;
     }
     public int getHp() {
         return this.hp;
