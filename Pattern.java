@@ -11,9 +11,12 @@ public class Pattern {
     protected int intelligence;
     protected int lvl;
     protected int xp;
+    protected String Class;
     protected String name;
+    protected HashMap<String, HeroAttack> HeroAttacks;
+    protected String[] HeroAttack;
 
-    public Pattern(int hp, int def, int power, int force, int intelligence) {
+    public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, HeroAttack> HeroAttacks, String[] HeroAttack) {
         this.hp = hp;
         this.def = def;
         this.power = power;
@@ -21,6 +24,9 @@ public class Pattern {
         this.intelligence = intelligence;
         this.lvl = 1;
         this.xp = 0;
+        this.Class = Class;
+        this.HeroAttacks = HeroAttacks;
+        this.HeroAttack = HeroAttack;
     }
 
     public void setName(String name) {
@@ -86,19 +92,5 @@ public class Pattern {
         setForce((int) Math.round((double) (getForce() * 1.5)));
         setIntelligence((int) Math.round((double) (getIntelligence() * 1.5)));
         setLvl(getLvl() + 1);
-    }
-
-    public HashMap<String, HeroAttack> getSpells() {
-        HashMap<String, HeroAttack> HerosSpells = new HashMap<String, HeroAttack>();
-        HerosSpells.put("physical_attack", new HeroAttack.physical_attack());
-        HerosSpells.put("force_attack", new HeroAttack.physical_attack());
-        HerosSpells.put("BountyHunter", new HeroAttack.physical_attack());
-        HerosSpells.put("armed_attack", new HeroAttack.physical_attack());
-        HerosSpells.put("batarang", new HeroAttack.physical_attack());
-        return HerosSpells;
-    }
-
-    public void physicalAttack() {
-
     }
 }
