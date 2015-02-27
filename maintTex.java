@@ -7,6 +7,7 @@ import java.util.HashMap;
 public class maintTex {
 
 	public static void main(String[] args) {
+		
 		//Ennemis test = new Ennemis(2);
 		//System.out.println(test.hp);
 			Hero hero = getHeroClass();
@@ -25,6 +26,7 @@ public class maintTex {
 	    } 
 
 	    public static Hero getHeroClass() {
+	    	String[] Classes = {"Jedi", "Sith", "BountyHunter", "ImperialAgent", "ImperialAgent", "Mercenary", "Jawa", "PyjamaBatman"};
 	        HashMap<String, Pattern> Heroclasses = new HashMap<String, Pattern>();
 	        Heroclasses.put("Jedi", new Pattern(100, 200, 100, 200, 200));
 	        Heroclasses.put("Sith", new Pattern(100, 100, 200, 200, 200));

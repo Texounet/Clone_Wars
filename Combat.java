@@ -11,8 +11,9 @@ public class Combat{
 		//Text de début de combat
 		System.out.println("Vous rentrer dans une sale dite de niveau "+lvl_room+ ". Dans cette salle vous rencontrer un "+bot.pattern.getName()+" qui vous attaque!");
 		System.out.println("(Oublier pas de faire 'help' pour connaitre les différente attaque de votre personnage ;) )");
-		int i = bot.pattern.getHp();
-		while(i > 0) { 
+		int vie_enn = bot.pattern.getHp();
+		int vie_hero = hero.stats.getHp();
+		while(vie_enn > 0) { 
 			System.out.println("Vous rentré en combat: ");
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String commande = null;
@@ -23,15 +24,32 @@ public class Combat{
 				System.exit(1);
 			}
 			if(ordreAttaque() == 1){
-				i = i-100;
-				bot.pattern.setHp(i);
-				System.out.println(i);
+				vie_enn = vie_enn-100;
+				bot.pattern.setHp(vie_enn);
+				System.out.println(bot.pattern.getName()+" "+vie_enn);
 				if(bot.pattern.getHp() <= 0){
+					break;
+				}
+				vie_hero = vie_hero-100;
+				hero.stats.setHp(vie_hero);
+				System.out.println("hero: "+vie_hero);
+				if(hero.stats.getHp() <= 0){
 					break;
 				}
 			}
 			else{
-				System.out.println("Ba non connard");
+				vie_hero = vie_hero-100;
+				hero.stats.setHp(vie_hero);
+				System.out.println("hero: "+vie_hero);
+				if(hero.stats.getHp() <= 0){
+					break;
+				}
+				vie_enn = vie_enn-100;
+				bot.pattern.setHp(vie_enn);
+				System.out.println(bot.pattern.getName()+" "+vie_enn);
+				if(bot.pattern.getHp() <= 0){
+					break;
+				}
 			}
 			System.out.println("test");
 		}

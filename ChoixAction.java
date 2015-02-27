@@ -23,12 +23,19 @@ public class ChoixAction {
 				System.out.println("IO error trying to read your name!");
 				System.exit(1);
 			}
+			String [] commande = new String[2];
+			commande[0] = "help";
+			commande[1] = "h";
+			commande[2] = "stat";
 			if(isInteger(lvl_salle) == true){
 				Room rd = new Room();
 				rd.room(Integer.parseInt(lvl_salle), hero);
 			}
 			else if(lvl_salle.compareTo("help") == 0 ||lvl_salle.compareTo("h") == 0 ){
 				System.out.println("Ici vous pouvez soit: \n -Rentrer directement le numéro de la salle(ex: 5) \n -Taper'info' pour voir vos statut actuel\n");
+			}
+			else if(lvl_salle.compareTo("stat") == 0 ||lvl_salle.compareTo("s") == 0 ){
+				System.out.println(hero.stats.getName()+":\nNiveau "+hero.stats.getLvl()+":\nHp :"+hero.stats.getHp()+"\nDef: "+ hero.stats.getDef()+"\nPower : "+ hero.stats.getPower()+"\nForce : "+hero.stats.getForce()+"\nIntel : "+hero.stats.getIntelligence()+"\n");
 			}
 			else{
 				System.out.println("Vous devez rentrez le niveau de la salle où vous désirez vous rendre.");
