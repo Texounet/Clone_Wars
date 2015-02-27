@@ -10,10 +10,6 @@ public class Main {
 
         // on creer le Héro
         Hero hero = init.getHeroClass();
-
-        System.out.println("Insert your attack" + "\n");
-        String chooseAttack = printerScanner.ReadPrompt();
-        if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack))
-            System.out.println("BITCHES");
+        ChoixAction rd = new ChoixAction(0, hero);
     }
 }

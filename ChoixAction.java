@@ -36,6 +36,11 @@ public class ChoixAction {
 			else{
 				System.out.println("Vous devez rentrez le niveau de la salle où vous désirez vous rendre.");
 			}
+			
+			if(hero.stats.getHp() < 1){
+				System.out.println("Game Over");
+				break;
+			}
 		}
 	}
 }

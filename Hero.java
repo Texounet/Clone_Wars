@@ -5,8 +5,10 @@ import java.util.HashMap;
  */
 public class Hero {
     public Pattern stats;
+    public HashMap<String, HeroAttack> HeroAttack;
 
     public Hero(Pattern stats, String name) {
+        this.HeroAttack = HeroAttack;
         this.stats = stats;
         stats.setName(name);
     }

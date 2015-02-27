@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -13,8 +14,10 @@ public class Combat{
 		System.out.println("(Oublier pas de faire 'help' pour connaitre les différente attaque de votre personnage ;) )");
 		int vie_enn = bot.pattern.getHp();
 		int vie_hero = hero.stats.getHp();
+		
+		System.out.println("Vous rentré en combat: ");
 		while(vie_enn > 0) { 
-			System.out.println("Vous rentré en combat: ");
+			System.out.println("Insert your attack\n");
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String commande = null;
 			try {
@@ -23,8 +26,13 @@ public class Combat{
 				System.out.println("IO error trying to read your name!");
 				System.exit(1);
 			}
-			if(ordreAttaque() == 1){
-				vie_enn = vie_enn-100;
+		     String chooseAttack = commande;
+		     if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
+		    	 hero.stats.HeroAttacks.get(chooseAttack).launch(hero, hero);
+		     }
+		         
+		        
+			if(ordreAttaque() == 1){    
 				bot.pattern.setHp(vie_enn);
 				System.out.println(bot.pattern.getName()+" "+vie_enn);
 				if(bot.pattern.getHp() <= 0){
