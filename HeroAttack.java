@@ -3,6 +3,7 @@
  */
 public abstract class HeroAttack {
     abstract public void launch(Hero hero, Hero enemy);
+
     static public class physical_attack extends HeroAttack{
         public void launch(Hero hero, Hero enemy) {
             System.out.println("BWAAAAAAAAAAAH");
