@@ -33,7 +33,7 @@ public class Main {
         } catch (IOException ioe) {
             return "Erreur";
         }
-    }
+    } 
 
     public static Hero getHeroClass() {
         System.out.println("Insert your Pseudo" + "\n");

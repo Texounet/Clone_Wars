@@ -6,12 +6,17 @@ import java.util.Random;
 public class Room{
 	int lvl_room;
 	
-	public Room(int lvl){
+	public Room(){
+		
+	}
+	
+	public void room(int lvl, Hero hero){
 		lvl_room = lvl_room(lvl);
 		int rnd = random();
 		Factory Mob = new Factory();
 		Ennemis bot = Mob.build(lvl_room, rnd);
-		System.out.println(bot.pattern.getHp());
+		//System.out.println(bot.pattern.getHp());
+		Combat trol = new Combat(bot, lvl, hero);
 	}
 	
 	public int lvl_room(int lvl){ //Niveau de la room
