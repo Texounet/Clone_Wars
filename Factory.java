@@ -29,6 +29,7 @@ public class Factory{
 		
 		Ennemis ennemi = new Ennemis(bot.get(botName));
 		ennemi.lvlUp(lvl_room);
+		ennemi.pattern.setName(botName);
 		
 		return ennemi;
 		//initLvl(lvl_room,ennemi);

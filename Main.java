@@ -8,7 +8,7 @@ public class Main {
         Init init = new Init();
         PrinterScanner printerScanner = new PrinterScanner();
 
-        // on creer le HÃ©ro
+        // on creer le Héro
         Hero hero = init.getHeroClass();
 
         System.out.println("Insert your attack" + "\n");
