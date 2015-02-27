@@ -23,10 +23,6 @@ public class ChoixAction {
 				System.out.println("IO error trying to read your name!");
 				System.exit(1);
 			}
-			String [] commande = new String[2];
-			commande[0] = "help";
-			commande[1] = "h";
-			commande[2] = "stat";
 			if(isInteger(lvl_salle) == true){
 				Room rd = new Room();
 				rd.room(Integer.parseInt(lvl_salle), hero);
