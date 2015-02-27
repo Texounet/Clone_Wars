@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * Created by max on 25/02/2015.
  */
@@ -36,44 +38,64 @@ public class Pattern {
     public int getHp() {
         return this.hp;
     }
+
     public void setDef(int def) {
         this.def = def;
     }
+
     public int getDef() {
         return this.def;
     }
+
     public void setPower(int power) {
         this.power = power;
     }
+
     public int getPower() {
         return this.power;
     }
+
     public void setForce(int force) {
         this.force = force;
     }
+
     public int getForce() {
         return this.force;
     }
+
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
     }
+
     public int getIntelligence() {
         return this.intelligence;
     }
+
     public void setLvl(int lvl) {
         this.lvl = lvl;
     }
+
     public int getLvl() {
         return this.lvl;
     }
 
-    public void lvlUp(){
-		setHp((int) Math.round((double) (getHp()*1.5)));
-		setDef((int) Math.round((double) (getDef()*1.5)));
-		setPower((int) Math.round((double) (getPower()*1.5)));
-		setForce((int) Math.round((double) (getForce()*1.5)));
-		setIntelligence((int) Math.round((double) (getIntelligence()*1.5)));
-		setLvl(getLvl()+1);
+    public void lvlUp() {
+        setHp((int) Math.round((double) (getHp() * 1.5)));
+        setDef((int) Math.round((double) (getDef() * 1.5)));
+        setPower((int) Math.round((double) (getPower() * 1.5)));
+        setForce((int) Math.round((double) (getForce() * 1.5)));
+        setIntelligence((int) Math.round((double) (getIntelligence() * 1.5)));
+        setLvl(getLvl() + 1);
+    }
+
+    public HashMap<String, HeroAttack> getSpells() {
+        HashMap<String, HeroAttack> HerosSpells = new HashMap<String, HeroAttack>();
+        HerosSpells.put("physical_attack", new HeroAttack.physical_attack());
+        HerosSpells.put("force_attack", new HeroAttack.physical_attack());
+        HerosSpells.put("BountyHunter", new HeroAttack.physical_attack());
+        HerosSpells.put("armed_attack", new HeroAttack.physical_attack());
+        HerosSpells.put("batarang", new HeroAttack.physical_attack());
+        return HerosSpells;
     }
 
     public void physicalAttack() {
