@@ -27,18 +27,19 @@ public class Combat{
 				System.exit(1);
 			}
 		     String chooseAttack = commande;
-		     if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
-		    	 hero.stats.HeroAttacks.get(chooseAttack).launch(hero, hero);
-		     }
+		    
 		         
 		        
-			if(ordreAttaque() == 1){    
+			if(ordreAttaque() == 1){ 
+				 if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
+			    	 hero.stats.HeroAttacks.get(chooseAttack).launch(hero, hero);
+			     }
 				bot.pattern.setHp(vie_enn);
-				System.out.println(bot.pattern.getName()+" "+vie_enn);
+				System.out.println(hero.stats.getName()+" "+ hero.stats.hp);//bot
 				if(bot.pattern.getHp() <= 0){
 					break;
 				}
-				vie_hero = vie_hero-100;
+				//vie_hero = vie_hero-100; //Remplacer par les attaques
 				hero.stats.setHp(vie_hero);
 				System.out.println("hero: "+vie_hero);
 				if(hero.stats.getHp() <= 0){
@@ -46,15 +47,18 @@ public class Combat{
 				}
 			}
 			else{
-				vie_hero = vie_hero-100;
+				//vie_hero = vie_hero-100;
 				hero.stats.setHp(vie_hero);
 				System.out.println("hero: "+vie_hero);
 				if(hero.stats.getHp() <= 0){
 					break;
 				}
-				vie_enn = vie_enn-100;
+				 if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
+			    	 hero.stats.HeroAttacks.get(chooseAttack).launch(hero, hero);
+			     }
+				//vie_enn = vie_enn-100;
 				bot.pattern.setHp(vie_enn);
-				System.out.println(bot.pattern.getName()+" "+vie_enn);
+				System.out.println(hero.stats.getName()+" "+ hero.stats.hp);//bot
 				if(bot.pattern.getHp() <= 0){
 					break;
 				}
