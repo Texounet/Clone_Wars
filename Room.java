@@ -16,7 +16,8 @@ public class Room{
 		Factory Mob = new Factory();
 		Character bot = Mob.build(lvl_room, rnd);
 		//System.out.println(bot.pattern.getHp());
-		Combat trol = new Combat(bot, lvl, hero);
+		Combat combat = new Combat(bot, lvl, hero);
+        int resultat = combat.launch();
 	}
 	
 	public int lvl_room(int lvl){ //Niveau de la room

@@ -1,11 +1,8 @@
-import java.util.HashMap;
-
 /**
  * Created by max on 26/02/2015.
  */
 public class Character {
     public Pattern stats;
-    public HashMap<String, AttackList> HeroAttack;
 
     public Character(Pattern stats, String name) {
         this.stats = stats;
