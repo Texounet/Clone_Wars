@@ -35,9 +35,7 @@ public class Combat {
             } else {
                 PlayerAttack();
             }
-            if (checkDeath() == 1) {
-                Combat_over = 1;
-            }
+            Combat_over = checkDeath();
         }
         return Combat_over;
     }
@@ -68,7 +66,12 @@ public class Combat {
     }
 
     public int checkDeath() {
-        return 1;
+        if(hero.stats.hp < 1)
+            return 1;
+        else if (bot.stats.hp < 1)
+            return 2;
+        else
+            return 0;
     }
 
 }
