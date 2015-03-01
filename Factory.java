@@ -8,7 +8,7 @@ public class Factory{
 		
 	}
 	
-	public Ennemis build(int lvl_room, int rnd){
+	public Character build(int lvl_room, int rnd){
 
 		 HashMap<String, AttackList> getSpells = new HashMap<String, AttackList>();
 	        getSpells.put("physical_attackList", new AttackList.physical_attack());
@@ -33,9 +33,9 @@ public class Factory{
 			botName = "Droid";
 		}
 		
-		Ennemis ennemi = new Ennemis(bot.get(botName));
+		Character ennemi = new Character(bot.get(botName), botName);
 		ennemi.lvlUp(lvl_room);
-		ennemi.pattern.setName(botName);
+		ennemi.stats.setName(botName);
 		
 		return ennemi;
 		//initLvl(lvl_room,ennemi);

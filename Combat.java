@@ -7,15 +7,15 @@ import java.util.Random;
 
 public class Combat{
 	
-	public Combat(Ennemis bot,int lvl_room, Hero hero){
+	public Combat(Character bot,int lvl_room, Character hero){
 		//System.out.println(bot.pattern.getHp());	
-		//Text de début de combat
-		System.out.println("Vous rentrer dans une sale dite de niveau "+lvl_room+ ". Dans cette salle vous rencontrer un "+bot.pattern.getName()+" qui vous attaque!");
-		System.out.println("(Oublier pas de faire 'help' pour connaitre les différente attaque de votre personnage ;) )");
-		int vie_enn = bot.pattern.getHp();
+		//Text de dï¿½but de combat
+		System.out.println("Vous rentrer dans une sale dite de niveau "+lvl_room+ ". Dans cette salle vous rencontrer un "+bot.stats.getName()+" qui vous attaque!");
+		System.out.println("(Oublier pas de faire 'help' pour connaitre les diffï¿½rente attaque de votre personnage ;) )");
+		int vie_enn = bot.stats.getHp();
 		int vie_hero = hero.stats.getHp();
 		
-		System.out.println("Vous rentré en combat: ");
+		System.out.println("Vous rentrï¿½ en combat: ");
 		while(vie_enn > 0) { 
 			System.out.println("Insert your attack\n");
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,9 +34,9 @@ public class Combat{
 				 if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
 			    	 hero.stats.HeroAttacks.get(chooseAttack).launch(hero, hero);
 			     }
-				bot.pattern.setHp(vie_enn);
+				bot.stats.setHp(vie_enn);
 				System.out.println(hero.stats.getName()+" "+ hero.stats.hp);//bot
-				if(bot.pattern.getHp() <= 0){
+				if(bot.stats.getHp() <= 0){
 					break;
 				}
 				//vie_hero = vie_hero-100; //Remplacer par les attaques
@@ -57,9 +57,9 @@ public class Combat{
 			    	 hero.stats.HeroAttacks.get(chooseAttack).launch(hero, hero);
 			     }
 				//vie_enn = vie_enn-100;
-				bot.pattern.setHp(vie_enn);
+				bot.stats.setHp(vie_enn);
 				System.out.println(hero.stats.getName()+" "+ hero.stats.hp);//bot
-				if(bot.pattern.getHp() <= 0){
+				if(bot.stats.getHp() <= 0){
 					break;
 				}
 			}

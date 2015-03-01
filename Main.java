@@ -7,7 +7,7 @@ public class Main {
         PrinterScanner printerScanner = new PrinterScanner();
 
         // on creer le H�ro
-        Hero hero = init.getHeroClass();
+        Character hero = init.getHeroClass();
         ChoixAction rd = new ChoixAction(0, hero);
     }
 }
