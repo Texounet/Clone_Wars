@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.HashMap;
 
 /**
@@ -11,21 +10,21 @@ public class Init {
         PrinterScanner printerScanner = new PrinterScanner();
         Hero hero = null;
 
-        HashMap<String, HeroAttack> getSpells = new HashMap<String, HeroAttack>();
-        getSpells.put("physical_attack", new HeroAttack.physical_attack());
-        getSpells.put("force_attack", new HeroAttack.force_attack());
-        getSpells.put("armed_attack", new HeroAttack.armed_attack());
-        getSpells.put("batarang", new HeroAttack.batarang());
+        HashMap<String, AttackList> getSpells = new HashMap<String, AttackList>();
+        getSpells.put("physical_attackList", new AttackList.physical_attack());
+        getSpells.put("force_attackList", new AttackList.force_attack());
+        getSpells.put("armed_attackList", new AttackList.armed_attack());
+        getSpells.put("batarang", new AttackList.batarang());
 
 
         HashMap<String, Pattern> Heroclasses = new HashMap<String, Pattern>();
-        Heroclasses.put("Jedi", new Pattern(100, 200, 100, 200, 200, "Jedi", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("Sith", new Pattern(100, 100, 200, 200, 200, "Sith", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("BountyHunter", new Pattern(100, 100, 100, 0, 350, "BountyHunter", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("ImperialAgent", new Pattern(350, 100, 100, 0, 100, "ImperialAgent", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("Mercenary", new Pattern(100, 350, 100, 0, 100, "Mercenary", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("Jawa", new Pattern(400, 400, 400, 0, 400, "Jawa", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("PyjamaBatman", new Pattern(1000, 1000, 1000, 0, 1000, "PyjamaBatman", getSpells, new String[] {"physical_attack"}));
+        Heroclasses.put("Jedi", new Pattern(100, 200, 100, 200, 200, "Jedi", getSpells, new String[] {"physical_attackList"}));
+        Heroclasses.put("Sith", new Pattern(100, 100, 200, 200, 200, "Sith", getSpells, new String[] {"physical_attackList"}));
+        Heroclasses.put("BountyHunter", new Pattern(100, 100, 100, 0, 350, "BountyHunter", getSpells, new String[] {"physical_attackList"}));
+        Heroclasses.put("ImperialAgent", new Pattern(350, 100, 100, 0, 100, "ImperialAgent", getSpells, new String[] {"physical_attackList"}));
+        Heroclasses.put("Mercenary", new Pattern(100, 350, 100, 0, 100, "Mercenary", getSpells, new String[] {"physical_attackList"}));
+        Heroclasses.put("Jawa", new Pattern(400, 400, 400, 0, 400, "Jawa", getSpells, new String[] {"physical_attackList"}));
+        Heroclasses.put("PyjamaBatman", new Pattern(1000, 1000, 1000, 0, 1000, "PyjamaBatman", getSpells, new String[] {"physical_attackList"}));
 
 
         System.out.println("Insert your Pseudo" + "\n");

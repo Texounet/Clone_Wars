@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Created by max on 25/02/2015.
  */
@@ -8,7 +6,7 @@ public class Main {
         Init init = new Init();
         PrinterScanner printerScanner = new PrinterScanner();
 
-        // on creer le Héro
+        // on creer le Hï¿½ro
         Hero hero = init.getHeroClass();
         ChoixAction rd = new ChoixAction(0, hero);
     }
