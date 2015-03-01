@@ -10,11 +10,11 @@ public class Room{
 		
 	}
 	
-	public void room(int lvl, Hero hero){
+	public void room(int lvl, Character hero){
 		lvl_room = lvl_room(lvl);
 		int rnd = random();
 		Factory Mob = new Factory();
-		Ennemis bot = Mob.build(lvl_room, rnd);
+		Character bot = Mob.build(lvl_room, rnd);
 		//System.out.println(bot.pattern.getHp());
 		Combat trol = new Combat(bot, lvl, hero);
 	}

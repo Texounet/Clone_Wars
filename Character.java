@@ -3,13 +3,19 @@ import java.util.HashMap;
 /**
  * Created by max on 26/02/2015.
  */
-public class Hero {
+public class Character {
     public Pattern stats;
     public HashMap<String, AttackList> HeroAttack;
 
-    public Hero(Pattern stats, String name) {
-        this.HeroAttack = HeroAttack;
+    public Character(Pattern stats, String name) {
         this.stats = stats;
         stats.setName(name);
+    }
+
+    public void lvlUp(int lvl){
+        while(lvl >  0){
+            stats.lvlUp();
+            lvl--;
+        }
     }
 }

@@ -6,9 +6,9 @@ import java.util.HashMap;
 public class Init {
     static String[] Classes = {"Jedi", "Sith", "BountyHunter", "ImperialAgent", "ImperialAgent", "Mercenary", "Jawa", "PyjamaBatman"};
 
-    public static Hero getHeroClass() {
+    public static Character getHeroClass() {
         PrinterScanner printerScanner = new PrinterScanner();
-        Hero hero = null;
+        Character hero = null;
 
         HashMap<String, AttackList> getSpells = new HashMap<String, AttackList>();
         getSpells.put("physical_attackList", new AttackList.physical_attack());
@@ -35,7 +35,7 @@ public class Init {
         while (Define != 1) {
             String chooseClass = Classes[Integer.parseInt(printerScanner.ReadPrompt())-1];
             if (Heroclasses.containsKey(chooseClass)) {
-                hero = new Hero(Heroclasses.get(chooseClass), name);
+                hero = new Character(Heroclasses.get(chooseClass), name);
                 Define = 1;
             } else {
                 System.out.println("This class doesn't exist" + "\n");
