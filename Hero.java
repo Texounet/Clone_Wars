@@ -5,7 +5,7 @@ import java.util.HashMap;
  */
 public class Hero {
     public Pattern stats;
-    public HashMap<String, HeroAttack> HeroAttack;
+    public HashMap<String, AttackList> HeroAttack;
 
     public Hero(Pattern stats, String name) {
         this.HeroAttack = HeroAttack;

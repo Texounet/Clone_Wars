@@ -13,10 +13,10 @@ public class Pattern {
     protected int xp;
     protected String Class;
     protected String name;
-    protected HashMap<String, HeroAttack> HeroAttacks;
+    protected HashMap<String, AttackList> HeroAttacks;
     protected String[] HeroAttack;
 
-    public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, HeroAttack> HeroAttacks, String[] HeroAttack) {
+    public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, AttackList> HeroAttacks, String[] HeroAttack) {
         this.hp = hp;
         this.def = def;
         this.power = power;
