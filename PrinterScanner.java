@@ -16,7 +16,7 @@ public class PrinterScanner {
 
 
 
-    public static String ReadPrompt() {
+    public String ReadPrompt() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
             return br.readLine();
