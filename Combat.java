@@ -21,21 +21,25 @@ public class Combat {
 
         int Combat_over = 0;
         while (Combat_over == 0) {
-            if (ordreAttaque() == 1) {
+        	int random = ordreAttaque();
+        	if (random == 1) {
                 PlayerAttack();
-            } else {
+                Combat_over = checkDeath();
+                if (Combat_over != 0) { //Stoop le combat
+                    continue;
+                }
                 BotAttack();
-            }
-            Combat_over = checkDeath() ;
-            if (Combat_over != 0) {
-                continue;
-            }
-            if (ordreAttaque() == 1) {
+                Combat_over = checkDeath();
+            } 
+        	else {
                 BotAttack();
-            } else {
+                Combat_over = checkDeath();
+                if (Combat_over != 0) {
+                    continue;
+                }
                 PlayerAttack();
+                Combat_over = checkDeath();
             }
-            Combat_over = checkDeath();
         }
         return Combat_over;
     }

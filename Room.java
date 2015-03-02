@@ -22,7 +22,7 @@ public class Room{
 	
 	public int lvl_room(int lvl){ //Niveau de la room
 		Random rand = new Random();
-		int rnd = rand.nextInt(3);
+		int rnd = rand.nextInt(2);
 		lvl = lvl+rnd;
 		return lvl;
 	}
