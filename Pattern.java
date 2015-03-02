@@ -11,24 +11,42 @@ public class Pattern {
     protected int intelligence;
     protected int lvl;
     protected int xp;
+    protected int xpLvl;
     protected String Class;
     protected String name;
     protected HashMap<String, AttackList> HeroAttacks;
     protected String[] HeroAttack;
 
-    public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, AttackList> HeroAttacks, String[] HeroAttack) {
+    public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, AttackList> HeroAttacks, String[] HeroAttack, int xp, int xpLvl) {
         this.hp = hp;
         this.def = def;
         this.power = power;
         this.force = force;
         this.intelligence = intelligence;
         this.lvl = 1;
-        this.xp = 0;
+        this.xp = xp;
+        this.xpLvl = xpLvl;
         this.Class = Class;
         this.HeroAttacks = HeroAttacks;
         this.HeroAttack = HeroAttack;
     }
 
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
+
+    public int getXp() {
+        return this.xp;
+    }
+    
+    public void setXpLvl(int xpLvl) {
+        this.xpLvl = xpLvl;
+    }
+
+    public int getXpLvl() {
+        return this.xpLvl;
+    }
+    
     public void setName(String name) {
         this.name = name;
     }
@@ -91,6 +109,8 @@ public class Pattern {
         setPower((int) Math.round((double) (getPower() * 1.5)));
         setForce((int) Math.round((double) (getForce() * 1.5)));
         setIntelligence((int) Math.round((double) (getIntelligence() * 1.5)));
+        setXpLvl((int) Math.round((double) (getXpLvl() * 1.5)));
+        setXp((int) Math.round((double) (getXp() * 1.25)));
         setLvl(getLvl() + 1);
     }
 }

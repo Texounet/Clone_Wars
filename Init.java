@@ -18,13 +18,13 @@ public class Init {
 
 
         HashMap<String, Pattern> Heroclasses = new HashMap<String, Pattern>();
-        Heroclasses.put("Jedi", new Pattern(100, 200, 100, 200, 200, "Jedi", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("Sith", new Pattern(100, 100, 200, 200, 200, "Sith", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("BountyHunter", new Pattern(100, 100, 100, 0, 350, "BountyHunter", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("ImperialAgent", new Pattern(350, 100, 100, 0, 100, "ImperialAgent", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("Mercenary", new Pattern(100, 350, 100, 0, 100, "Mercenary", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("Jawa", new Pattern(400, 400, 400, 0, 400, "Jawa", getSpells, new String[] {"physical_attack"}));
-        Heroclasses.put("PyjamaBatman", new Pattern(1000, 1000, 1000, 0, 1000, "PyjamaBatman", getSpells, new String[] {"physical_attack"}));
+        Heroclasses.put("Jedi", new Pattern(100, 200, 100, 200, 200, "Jedi", getSpells, new String[] {"physical_attack"},0,100));
+        Heroclasses.put("Sith", new Pattern(100, 100, 200, 200, 200, "Sith", getSpells, new String[] {"physical_attack"},0,100));
+        Heroclasses.put("BountyHunter", new Pattern(100, 100, 100, 0, 350, "BountyHunter", getSpells, new String[] {"physical_attack"},0,100));
+        Heroclasses.put("ImperialAgent", new Pattern(350, 100, 100, 0, 100, "ImperialAgent", getSpells, new String[] {"physical_attack"},0,100));
+        Heroclasses.put("Mercenary", new Pattern(100, 350, 100, 0, 100, "Mercenary", getSpells, new String[] {"physical_attack"},0,50));
+        Heroclasses.put("Jawa", new Pattern(400, 400, 400, 0, 400, "Jawa", getSpells, new String[] {"physical_attack"},0,100));
+        Heroclasses.put("PyjamaBatman", new Pattern(1000, 1000, 1000, 0, 1000, "PyjamaBatman", getSpells, new String[] {"physical_attack"},0,100));
 
 
         System.out.println("Insert your Pseudo" + "\n");

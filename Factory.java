@@ -17,9 +17,9 @@ public class Factory{
 	        getSpells.put("batarang", new AttackList.batarang());
 		
 		HashMap<String, Pattern> bot = new HashMap<String, Pattern>();
-		bot.put("Droid", new Pattern(50, 100, 25, 0, 200, "Droid", getSpells, new String[] {"physical_attack"}));
-		bot.put("Clone", new Pattern(100, 100, 100, 0, 0, "Clone", getSpells, new String[] {"physical_attack"}));
-		bot.put("Soldat", new Pattern(100, 150, 125, 0, 125, "Soldat", getSpells, new String[] {"physical_attack"}));
+		bot.put("Droid", new Pattern(50, 100, 25, 0, 200, "Droid", getSpells, new String[] {"physical_attack"},15,0));
+		bot.put("Clone", new Pattern(100, 100, 100, 0, 0, "Clone", getSpells, new String[] {"physical_attack"},20,0));
+		bot.put("Soldat", new Pattern(100, 150, 125, 0, 125, "Soldat", getSpells, new String[] {"physical_attack"},25,0));
 		String botName = null;
 		
 		//System.out.println(rnd);

@@ -15,8 +15,11 @@ public class Combat {
 
     public int launch() {
         //Text de debut de combat
-        System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getName() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
+        System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getXp() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
         System.out.println("La commande help permet de connaitre les attaques utilisable par " + hero.stats.getName());
+        System.out.println(bot.stats.getXp());
+        System.out.println(bot.stats.getHp());
+        System.out.println(hero.stats.getXpLvl());
         System.out.println("Debut du combat");
 
         int Combat_over = 0;
@@ -73,6 +76,7 @@ public class Combat {
         if(hero.stats.hp < 1)
             return 1;
         else if (bot.stats.hp < 1)
+        	//ICI Pour ajout Exp
             return 2;
         else
             return 0;
