@@ -4,9 +4,16 @@
 public abstract class AttackList {
     abstract public void launch(Character hero, Character enemy);
 
+    static int checkDegat(int degat) {
+        if (degat < 10 ) {
+            degat = 10;
+        }
+        return degat;
+    }
+
     static public class physical_attack extends AttackList {
         public void launch(Character fighter, Character defender) {
-            int degat = fighter.stats.power - defender.stats.def;
+            int degat = checkDegat(fighter.stats.power - defender.stats.def);
             System.out.println(fighter.stats.name + " inflige  "+degat+" a "+defender.stats.name);
             defender.stats.hp -= degat;
         }
@@ -14,7 +21,7 @@ public abstract class AttackList {
 
     static class force_attack extends AttackList {
         public void launch(Character fighter, Character defender) {
-            int degat = (fighter.stats.force/10)*2;
+            int degat = checkDegat((fighter.stats.force/10)*2);
             System.out.println(fighter.stats.name + " inflige  "+degat+" a "+defender.stats.name);
             defender.stats.hp -= degat;
         }
@@ -22,7 +29,7 @@ public abstract class AttackList {
 
     static public class armed_attack extends AttackList {
         public void launch(Character fighter, Character defender) {
-            int degat = fighter.stats.intelligence - defender.stats.def;
+            int degat = checkDegat(fighter.stats.intelligence - defender.stats.def);
             System.out.println(fighter.stats.name + " inflige  "+degat+" a "+defender.stats.name);
             defender.stats.hp -= degat;
         }
@@ -30,7 +37,7 @@ public abstract class AttackList {
 
     static public class batarang extends AttackList {
         public void launch(Character fighter, Character defender) {
-            int degat = fighter.stats.power - defender.stats.def;
+            int degat = checkDegat(fighter.stats.power - defender.stats.def);
             System.out.println(fighter.stats.name + " inflige  "+degat+" a "+defender.stats.name);
             defender.stats.hp -= degat;
         }
