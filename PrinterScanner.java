@@ -6,12 +6,18 @@ import java.io.InputStreamReader;
  * Created by max on 27/02/2015.
  */
 public class PrinterScanner {
-    public void printTab(String[] tab) {
+    public void printTab(String[] tab, int number) {
         int i = 1;
+        String toprint = "";
         for (String s : tab) {
-            System.out.println(i + " = " + s);
+            if (number == 1) {
+                toprint += i + " = " + s+ "\n";
+            } else {
+                toprint +=  s+ ", ";
+            }
             i++;
         }
+        System.out.println(toprint);
     }
 
 

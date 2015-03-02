@@ -18,9 +18,10 @@ public class Combat {
         System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getName() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
         System.out.println("La commande help permet de connaitre les attaques utilisable par " + hero.stats.getName());
         System.out.println("Debut du combat");
-
+        int round = 1;
         int Combat_over = 0;
         while (Combat_over == 0) {
+            System.out.println("\nRound n°"+round+"\n");
         	int random = ordreAttaque();
         	if (random == 1) {
                 PlayerAttack();
@@ -40,6 +41,7 @@ public class Combat {
                 PlayerAttack();
                 Combat_over = checkDeath();
             }
+            round++;
         }
         return Combat_over;
     }
@@ -53,8 +55,10 @@ public class Combat {
     public void PlayerAttack() {
         boolean bool = true;
         while (bool) {
-            System.out.println("Choose your attack\n");
             PrinterScanner printer = new PrinterScanner();
+            System.out.println("Choose your attack\n");
+            printer.printTab(hero.stats.HeroAttack, 0);
+
             String chooseAttack = printer.ReadPrompt();
             if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
                 hero.stats.HeroAttacks.get(chooseAttack).launch(hero, bot);
