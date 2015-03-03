@@ -11,13 +11,14 @@ public class Pattern {
     protected int intelligence;
     protected int lvl;
     protected int xp;
+    protected int gold;
     protected int xpLvl;
     protected String Class;
     protected String name;
     protected HashMap<String, AttackList> HeroAttacks;
     protected String[] HeroAttack;
 
-    public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, AttackList> HeroAttacks, String[] HeroAttack, int xp, int xpLvl) {
+    public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, AttackList> HeroAttacks, String[] HeroAttack, int xp, int xpLvl, int gold) {
         this.hp = hp;
         this.def = def;
         this.power = power;
@@ -25,10 +26,19 @@ public class Pattern {
         this.intelligence = intelligence;
         this.lvl = 1;
         this.xp = xp;
+        this.gold = gold;
         this.xpLvl = xpLvl;
         this.Class = Class;
         this.HeroAttacks = HeroAttacks;
         this.HeroAttack = HeroAttack;
+    }
+    
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public int getGold() {
+        return this.gold;
     }
 
     public void setXp(int xp) {

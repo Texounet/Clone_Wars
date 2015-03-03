@@ -17,9 +17,9 @@ public class Combat {
         //Text de debut de combat
         System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getXp() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
         System.out.println("La commande help permet de connaitre les attaques utilisable par " + hero.stats.getName());
-        System.out.println(bot.stats.getXp());
-        System.out.println(bot.stats.getHp());
-        System.out.println(hero.stats.getXpLvl());
+        //System.out.println(hero.stats.getXp());
+        //System.out.println(bot.stats.getXp());
+        //System.out.println(hero.stats.getXpLvl());
         System.out.println("Debut du combat");
         int round = 1;
         int Combat_over = 0;
@@ -79,11 +79,30 @@ public class Combat {
     public int checkDeath() {
         if(hero.stats.hp < 1)
             return 1;
-        else if (bot.stats.hp < 1)
-        	//ICI Pour ajout Exp
+        else if (bot.stats.hp < 1){
+        	addExp(bot, hero);
+        	addGold(bot, hero);
             return 2;
+        }
         else
             return 0;
+    }
+    
+    public void addExp(Character bot, Character hero){
+    	int tempo = hero.stats.xp + bot.stats.xp;
+    	
+    	if(tempo >= hero.stats.getXpLvl()){
+    		hero.stats.lvlUp();
+    		int tempo2 = hero.stats.getXpLvl() - tempo;
+    		hero.stats.setXp(tempo2);
+    	}
+    	else{
+    		hero.stats.setXp(tempo);
+    	}
+    }
+    public void addGold(Character bot, Character hero){
+    	int tempo = bot.stats.getGold() + hero.stats.getGold();
+    	hero.stats.setGold(tempo);
     }
 
 }
