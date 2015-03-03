@@ -10,7 +10,8 @@ public class Character {
     }
 
     public void lvlUp(int lvl){
-        while(lvl >  0){
+        while(lvl > 0){
+        	stats.setGold((int) (Math.round(stats.getGold()*1.5)));
             stats.lvlUp();
             lvl--;
         }
