@@ -39,7 +39,7 @@ public class Init {
                 hero = new Character(Heroclasses.get(chooseClass), name);
                 Define = 1;
             } else {
-                System.out.println("Cette classe n'existe pas");
+                System.out.println("Cette classe n'existe pas.");
             }
         }
         return hero;

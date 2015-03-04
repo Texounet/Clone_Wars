@@ -46,7 +46,7 @@ public class Magasin {
 				System.out.println("Merci de votre visite");
 			}
 			else{
-				System.out.println("Votre commande est invalide. Consulter l'aide grace à la commande h ou 'help'");
+				System.out.println("Votre commande est invalide. Consulter l'aide en tapant h ou 'help'");
 			}
 		}
 	}
