@@ -69,7 +69,11 @@ public class Combat {
     }
 
     public void BotAttack() {
-        bot.stats.HeroAttacks.get("physical_attack").launch(bot, hero);
+        String[] attack = new String[] {"physical_attack", "armed_attack"};
+        Random rand = new Random();
+        int rnd = rand.nextInt(2);
+        System.out.println(attack[rnd]);
+        bot.stats.HeroAttacks.get(attack[rnd]).launch(bot, hero);
     }
 
     public int checkDeath() {
