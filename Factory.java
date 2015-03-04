@@ -19,9 +19,7 @@ public class Factory{
 		bot.put("Droid", new Pattern(50, 100, 25, 0, 200, "Droid", getSpells, new String[] {"physical_attack", "force_attack", "armed_attack"},15,0,50));
 		bot.put("Clone", new Pattern(100, 100, 100, 0, 100, "Clone", getSpells, new String[] {"physical_attack", "force_attack", "armed_attack"},20,0,80));
 		bot.put("Soldat", new Pattern(100, 150, 125, 0, 125, "Soldat", getSpells, new String[] {"physical_attack", "force_attack", "armed_attack"},25,0,100));
-		String botName = null;
-		
-		//System.out.println(rnd);
+        String botName;
 		if(rnd < 50){
 			botName = "Clone";
 		}
@@ -37,8 +35,5 @@ public class Factory{
 		ennemi.stats.setName(botName);
 		
 		return ennemi;
-		//initLvl(lvl_room,ennemi);
-		//init_lvl(5);
-		//System.out.println(rnd);
 	}
 }

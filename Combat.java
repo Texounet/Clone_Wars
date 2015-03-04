@@ -17,9 +17,6 @@ public class Combat {
         //Text de debut de combat
         System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getName() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
         System.out.println("La commande \"help\" permet de connaitre les attaques utilisable par " + hero.stats.getName());
-        //System.out.println(hero.stats.getXp());
-        //System.out.println(bot.stats.getXp());
-        //System.out.println(hero.stats.getXpLvl());
         System.out.println("Debut du combat");
         int round = 1;
         int Combat_over = 0;
