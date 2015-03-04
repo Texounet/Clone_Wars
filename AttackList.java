@@ -16,7 +16,7 @@ public abstract class AttackList {
     static public class physical_attack extends AttackList {
         public boolean launch(Character fighter, Character defender) {
             int degat = checkDegat(fighter.stats.power - defender.stats.def);
-            printer.print(fighter.stats.getName()+" punch you !");
+            printer.print(fighter.stats.getName()+" s'approche et frappe!");
             printer.printDamage(fighter, defender, degat);
             defender.stats.hp -= degat;
             return true;
@@ -25,7 +25,7 @@ public abstract class AttackList {
 
     static class force_attack extends AttackList {
         public boolean launch(Character fighter, Character defender) {
-            printer.print("You get strangled!");
+            printer.print("La force afflue en vous, une onde de choc atteint le " + defender.stats.getName());
             int degat = checkDegat((fighter.stats.force / 10) * 2);
             printer.printDamage(fighter, defender, degat);
             defender.stats.hp -= degat;
@@ -35,7 +35,7 @@ public abstract class AttackList {
 
     static public class armed_attack extends AttackList {
         public boolean launch(Character fighter, Character defender) {
-            printer.print(defender.stats.getName()+" took two blaster!");
+            printer.print("Deux blaster touchent " + defender.stats.getName());
             int degat = checkDegat(fighter.stats.intelligence - defender.stats.def);
             printer.printDamage(fighter, defender, degat);
             defender.stats.hp -= degat;
@@ -45,6 +45,7 @@ public abstract class AttackList {
 
     static public class batarang extends AttackList {
         public boolean launch(Character fighter, Character defender) {
+            printer.print("Le Batman lance sont Batarang, il fait deux trois tour sur lui même et atteint le " + defender.stats.getName()+" entre les deux yeaux");
             int degat = checkDegat(fighter.stats.power - defender.stats.def);
             printer.printDamage(fighter, defender, degat);
             defender.stats.hp -= degat;
@@ -54,7 +55,7 @@ public abstract class AttackList {
 
     static public class help extends AttackList {
         public boolean launch(Character fighter, Character defender) {
-            printer.print("You can use : ");
+            printer.print("Les commandes utilisables sont : ");
             printer.printTab(fighter.stats.HeroAttack, 0);
             return false;
         }
@@ -64,12 +65,12 @@ public abstract class AttackList {
         public boolean launch(Character fighter, Character defender) {
             if(fighter.stats.nbPotion > 0) {
                 int soin = ((fighter.stats.hpMax/100)*25);
-                printer.print("The potion restored you "+soin+" HP");
+                printer.print("La potion vous rend " + soin + " PV");
                 fighter.stats.nbPotion -= 1;
                 fighter.stats.hp += soin;
                 return true;
             } else {
-                printer.print("You don't have potion, go to the Shop");
+                printer.print("Vous n'avez pas de potion ");
                 return false;
             }
         }

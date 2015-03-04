@@ -16,7 +16,7 @@ public class Combat {
     public int launch() {
         //Text de debut de combat
         System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getName() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
-        System.out.println("La commande help permet de connaitre les attaques utilisable par " + hero.stats.getName());
+        System.out.println("La commande \"help\" permet de connaitre les attaques utilisable par " + hero.stats.getName());
         //System.out.println(hero.stats.getXp());
         //System.out.println(bot.stats.getXp());
         //System.out.println(hero.stats.getXpLvl());
@@ -58,12 +58,12 @@ public class Combat {
         boolean bool = false;
         while (!bool) {
             PrinterScanner printer = new PrinterScanner();
-            System.out.println("Choose your attack\n");
+            System.out.println("Entrez votre action\n");
             String chooseAttack = printer.ReadPrompt();
             if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
                 bool = hero.stats.HeroAttacks.get(chooseAttack).launch(hero, bot);
             } else {
-                System.out.println("This attack doesn't exist");
+                System.out.println("Cette action n'existe pas, tapez \"help\" pour connaitre les actions utilisable");
             }
         }
     }

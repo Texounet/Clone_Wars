@@ -27,14 +27,14 @@ public class Magasin {
 		tabItem[4] = "help";
 		
 		int nb_ac = 0;	
-		System.out.println("Bienvenut dans le magasin");
+		System.out.println("Bienvenue dans le magasin");
 		while(nb_ac == 0){
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String Action = null;
 			try {
 				Action = br.readLine();
 			} catch (IOException ioe) {
-				System.out.println("IO error trying to read your name!");
+				System.out.println("Erreur");
 				System.exit(1);
 			}
 			if (Arrays.asList(tabItem).contains(Action)) {
