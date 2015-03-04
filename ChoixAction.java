@@ -35,7 +35,7 @@ public class ChoixAction {
 			}
 			else if(lvl_salle.compareTo("magasin") == 0 ||lvl_salle.compareTo("m") == 0 ){
 				Magasin test  = new Magasin();
-				test.menu();
+				test.menu(hero);
 			}
 			else{
 				System.out.println("Vous devez rentrer le niveau de la salle ou vous desirez vous rendre.");
