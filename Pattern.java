@@ -5,6 +5,7 @@ import java.util.HashMap;
  */
 public class Pattern {
     protected int hp;
+    protected int hpMax;
     protected int def;
     protected int power;
     protected int force;
@@ -20,6 +21,7 @@ public class Pattern {
     protected String[] HeroAttack;
 
     public Pattern(int hp, int def, int power, int force, int intelligence,String Class, HashMap<String, AttackList> HeroAttacks, String[] HeroAttack, int xp, int xpLvl, int gold) {
+        this.hpMax = hp;
         this.hp = hp;
         this.def = def;
         this.power = power;
@@ -32,7 +34,7 @@ public class Pattern {
         this.Class = Class;
         this.HeroAttacks = HeroAttacks;
         this.HeroAttack = HeroAttack;
-        this.nbPotion = 0;
+        this.nbPotion = 1;
     }
     
     public void setGold(int gold) {

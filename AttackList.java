@@ -25,7 +25,7 @@ public abstract class AttackList {
 
     static class force_attack extends AttackList {
         public boolean launch(Character fighter, Character defender) {
-            printer.print("You get strangle!");
+            printer.print("You get strangled!");
             int degat = checkDegat((fighter.stats.force / 10) * 2);
             printer.printDamage(fighter, defender, degat);
             defender.stats.hp -= degat;
@@ -62,7 +62,16 @@ public abstract class AttackList {
 
     static public class heal extends AttackList {
         public boolean launch(Character fighter, Character defender) {
-            return true;
+            if(fighter.stats.nbPotion > 0) {
+                int soin = ((fighter.stats.hpMax/100)*25);
+                printer.print("The potion restored you "+soin+" HP");
+                fighter.stats.nbPotion -= 1;
+                fighter.stats.hp += soin;
+                return true;
+            } else {
+                printer.print("You don't have potion, go to the Shop");
+                return false;
+            }
         }
     }
 }
