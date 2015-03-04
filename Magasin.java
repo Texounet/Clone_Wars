@@ -24,13 +24,13 @@ public class Magasin {
 				nb_ac = 1;
 			}
 			else if(Action.compareTo("bonjour") == 0){
-				bonjour();
+				//bonjour();
 			}
 			else if(Action.compareTo("h") == 0 || Action.compareTo("help") == 0 ){
-				help();
+				//help();
 			}
 			else{
-				System.out.println("Votre commande est invalide. Consulter l'aide grace à la commande h ou 'help'");
+				System.out.println("Votre commande est invalide. Consulter l'aide grace ï¿½ la commande h ou 'help'");
 			}
 		}
 	}
