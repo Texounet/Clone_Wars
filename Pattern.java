@@ -13,6 +13,7 @@ public class Pattern {
     protected int xp;
     protected int gold;
     protected int xpLvl;
+    protected int nbPotion;
     protected String Class;
     protected String name;
     protected HashMap<String, AttackList> HeroAttacks;
@@ -31,6 +32,7 @@ public class Pattern {
         this.Class = Class;
         this.HeroAttacks = HeroAttacks;
         this.HeroAttack = HeroAttack;
+        this.nbPotion = 0;
     }
     
     public void setGold(int gold) {

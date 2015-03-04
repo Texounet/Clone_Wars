@@ -15,7 +15,7 @@ public class Combat {
 
     public int launch() {
         //Text de debut de combat
-        System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getXp() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
+        System.out.println("Vous rentrez dans la zone " + lvl_room + ". Un " + bot.stats.getName() + " de niveau " + bot.stats.getLvl() + " vous attaque!");
         System.out.println("La commande help permet de connaitre les attaques utilisable par " + hero.stats.getName());
         //System.out.println(hero.stats.getXp());
         //System.out.println(bot.stats.getXp());
@@ -24,9 +24,9 @@ public class Combat {
         int round = 1;
         int Combat_over = 0;
         while (Combat_over == 0) {
-            System.out.println("\nRound n°"+round+"\n");
-        	int random = ordreAttaque();
-        	if (random == 1) {
+            System.out.println("\nRound n°" + round + "\n");
+            int random = ordreAttaque();
+            if (random == 1) {
                 PlayerAttack();
                 Combat_over = checkDeath();
                 if (Combat_over != 0) { //Stoop le combat
@@ -34,8 +34,7 @@ public class Combat {
                 }
                 BotAttack();
                 Combat_over = checkDeath();
-            } 
-        	else {
+            } else {
                 BotAttack();
                 Combat_over = checkDeath();
                 if (Combat_over != 0) {
@@ -56,16 +55,13 @@ public class Combat {
     }
 
     public void PlayerAttack() {
-        boolean bool = true;
-        while (bool) {
+        boolean bool = false;
+        while (!bool) {
             PrinterScanner printer = new PrinterScanner();
             System.out.println("Choose your attack\n");
-            printer.printTab(hero.stats.HeroAttack, 0);
-
             String chooseAttack = printer.ReadPrompt();
             if (Arrays.asList(hero.stats.HeroAttack).contains(chooseAttack)) {
-                hero.stats.HeroAttacks.get(chooseAttack).launch(hero, bot);
-                bool = false;
+                bool = hero.stats.HeroAttacks.get(chooseAttack).launch(hero, bot);
             } else {
                 System.out.println("This attack doesn't exist");
             }
@@ -77,32 +73,31 @@ public class Combat {
     }
 
     public int checkDeath() {
-        if(hero.stats.hp < 1)
+        if (hero.stats.hp < 1)
             return 1;
-        else if (bot.stats.hp < 1){
-        	addExp(bot, hero);
-        	addGold(bot, hero);
+        else if (bot.stats.hp < 1) {
+            addExp(bot, hero);
+            addGold(bot, hero);
             return 2;
-        }
-        else
+        } else
             return 0;
     }
-    
-    public void addExp(Character bot, Character hero){
-    	int tempo = hero.stats.xp + bot.stats.xp;
-    	
-    	if(tempo >= hero.stats.getXpLvl()){
-    		hero.stats.lvlUp();
-    		int tempo2 = hero.stats.getXpLvl() - tempo;
-    		hero.stats.setXp(tempo2);
-    	}
-    	else{
-    		hero.stats.setXp(tempo);
-    	}
+
+    public void addExp(Character bot, Character hero) {
+        int tempo = hero.stats.xp + bot.stats.xp;
+
+        if (tempo >= hero.stats.getXpLvl()) {
+            hero.stats.lvlUp();
+            int tempo2 = hero.stats.getXpLvl() - tempo;
+            hero.stats.setXp(tempo2);
+        } else {
+            hero.stats.setXp(tempo);
+        }
     }
-    public void addGold(Character bot, Character hero){
-    	int tempo = bot.stats.getGold() + hero.stats.getGold();
-    	hero.stats.setGold(tempo);
+
+    public void addGold(Character bot, Character hero) {
+        int tempo = bot.stats.getGold() + hero.stats.getGold();
+        hero.stats.setGold(tempo);
     }
 
 }

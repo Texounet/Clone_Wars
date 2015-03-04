@@ -30,4 +30,12 @@ public class PrinterScanner {
             return "Erreur";
         }
     }
+
+    public void printDamage(Character fighter, Character Defender, int damage) {
+        System.out.println(Defender.stats.name + " lose "+ damage+ " HP");
+    }
+
+    public void print(String string) {
+        System.out.println(string);
+    }
 }
