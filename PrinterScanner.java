@@ -32,7 +32,7 @@ public class PrinterScanner {
     }
 
     public void printDamage(Character fighter, Character Defender, int damage) {
-        System.out.println(Defender.stats.name + " lose "+ damage+ " HP");
+        System.out.println(Defender.stats.name + " perd "+ damage+ " HP");
     }
 
     public void print(String string) {
